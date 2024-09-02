@@ -9,6 +9,12 @@ import SwiftUI
 
 extension Color {
     
+    static let topBackground = Color(hex: "#591E1C") // Deep reddish-brown
+    
+    static let midBackground = Color(hex: "#811424") // Lighter reddish-brown
+    
+    static let bottomBackground = Color(hex: "#263F44") // Dark teal
+    
     /// Initialises a `Color` from HEX value.
     ///
     /// Source: https://stackoverflow.com/a/56874327/12854695
