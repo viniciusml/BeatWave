@@ -14,6 +14,8 @@
 		EC731D152C8651DC001FB83A /* BeatWaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D142C8651DC001FB83A /* BeatWaveTests.swift */; };
 		EC731D1F2C8651DC001FB83A /* BeatWaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D1E2C8651DC001FB83A /* BeatWaveUITests.swift */; };
 		EC731D212C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D202C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift */; };
+		EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D2E2C86529C001FB83A /* LoginView.swift */; };
+		EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D312C8652BE001FB83A /* Color+Palette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		EC731D1A2C8651DC001FB83A /* BeatWaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeatWaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC731D1E2C8651DC001FB83A /* BeatWaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveUITests.swift; sourceTree = "<group>"; };
 		EC731D202C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EC731D2E2C86529C001FB83A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EC731D312C8652BE001FB83A /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		EC731D022C8651DB001FB83A /* BeatWave */ = {
 			isa = PBXGroup;
 			children = (
+				EC731D302C8652AD001FB83A /* Extensions */,
+				EC731D2D2C86527F001FB83A /* Login */,
 				EC731D032C8651DB001FB83A /* BeatWaveApp.swift */,
 				EC731D052C8651DB001FB83A /* ContentView.swift */,
 				EC731D072C8651DC001FB83A /* Assets.xcassets */,
@@ -125,6 +131,22 @@
 				EC731D202C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift */,
 			);
 			path = BeatWaveUITests;
+			sourceTree = "<group>";
+		};
+		EC731D2D2C86527F001FB83A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EC731D2E2C86529C001FB83A /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EC731D302C8652AD001FB83A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC731D312C8652BE001FB83A /* Color+Palette.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */,
+				EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */,
 				EC731D062C8651DB001FB83A /* ContentView.swift in Sources */,
 				EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */,
 			);
