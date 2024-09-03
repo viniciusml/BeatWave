@@ -9,11 +9,18 @@ import Foundation
 
 final class LoginViewModel {
     
+    private let credentialLoader: CredentialCache
+    
+    init(credentialLoader: CredentialCache) {
+        self.credentialLoader = credentialLoader
+    }
+    
     func performAction(_ action: Action) {
         switch action {
-        case .didPressLogIn:
-            // perform login action
-            break
+        case let .didPressLogIn(username, password):
+            credentialLoader.save(username: username, password: password, timestamp: Date.now) { _ in
+                // handle errors
+            }
         }
     }
 }

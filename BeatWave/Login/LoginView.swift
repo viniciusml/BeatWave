@@ -86,10 +86,25 @@ struct LoginView: View {
     }
     
     private var isButtonDisabled: Bool {
-        !username.isEmpty && !password.isEmpty
+        username.isEmpty && password.isEmpty
     }
 }
 
 #Preview {
-    LoginView(viewModel: LoginViewModel())
+    final class FakeCredentialLoader: CredentialCache {
+        
+        func save(username: String, password: String, timestamp: Date, completion: @escaping (SaveResult) -> Void) {
+            completion(.success(()))
+        }
+        
+        func validateCache(completion: @escaping (ValidationResult) -> Void) {
+            completion(.success(()))
+        }
+        
+        func load(completion: @escaping (LoadResult) -> Void) {
+            completion(.success(()))
+        }
+    }
+    
+    return LoginView(viewModel: LoginViewModel(credentialLoader: FakeCredentialLoader()))
 }

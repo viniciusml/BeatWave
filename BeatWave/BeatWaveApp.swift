@@ -46,7 +46,11 @@ final class SignInStrategy: ObservableObject {
     
     @Published private var isLoggedIn: Bool = false
     
+    private let credentialLoader: CredentialCache
+    
     public init(credentialLoader: CredentialCache) {
+        self.credentialLoader = credentialLoader
+        
         credentialLoader.load { result in
             guard ((try? result.get()) != nil) else {
                 return
@@ -63,7 +67,7 @@ final class SignInStrategy: ObservableObject {
             EmptyView() //music view, login is valid
         case false:
             
-            LoginView(viewModel: LoginViewModel())
+            LoginView(viewModel: LoginViewModel(credentialLoader: credentialLoader))
         }
     }
 }
