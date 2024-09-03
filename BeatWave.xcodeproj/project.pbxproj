@@ -16,6 +16,7 @@
 		EC731D212C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D202C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift */; };
 		EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D2E2C86529C001FB83A /* LoginView.swift */; };
 		EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D312C8652BE001FB83A /* Color+Palette.swift */; };
+		EC731D342C870409001FB83A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D332C870409001FB83A /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		EC731D202C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EC731D2E2C86529C001FB83A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EC731D312C8652BE001FB83A /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
+		EC731D332C870409001FB83A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				EC731D2E2C86529C001FB83A /* LoginView.swift */,
+				EC731D332C870409001FB83A /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */,
 				EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */,
 				EC731D062C8651DB001FB83A /* ContentView.swift in Sources */,
+				EC731D342C870409001FB83A /* LoginViewModel.swift in Sources */,
 				EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

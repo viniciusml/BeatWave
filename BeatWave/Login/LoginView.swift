@@ -9,6 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @ObservedObject var viewModel: LoginViewModel
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         ZStack {
             
@@ -34,7 +40,7 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                TextField("Username", text: .constant(""))
+                TextField("Username", text: $viewModel.username)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
                     .padding(.horizontal)
@@ -43,7 +49,7 @@ struct LoginView: View {
                     .cornerRadius(10)
                     .padding(.horizontal, 40)
                 
-                SecureField("Password", text: .constant(""))
+                SecureField("Password", text: $viewModel.password)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                     .background(Color.white)
@@ -77,5 +83,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(viewModel: LoginViewModel())
 }
