@@ -8,9 +8,11 @@
 import Foundation
 
 protocol CredentialCache {
-    typealias Result = Swift.Result<Void, Error>
+    typealias SaveResult = Result<Void, Error>
+    typealias ValidationResult = Result<Void, Error>
     
-    func save(username: String, password: String, timestamp: Date, completion: @escaping (Result) -> Void)
+    func save(username: String, password: String, timestamp: Date, completion: @escaping (SaveResult) -> Void)
+    func validateCache(completion: @escaping (ValidationResult) -> Void)
 }
 
 final class CredentialLoader {
@@ -28,10 +30,26 @@ final class CredentialLoader {
 }
 
 extension CredentialLoader: CredentialCache {
-    public typealias SaveResult = CredentialCache.Result
     
     func save(username: String, password: String, timestamp: Date, completion: @escaping (SaveResult) -> Void) {
         cache(username: username, password: password, timestamp: timestamp, completion: completion)
+    }
+    
+    func validateCache(completion: @escaping (ValidationResult) -> Void) {
+        store.load { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .failure:
+                store.clear()
+                
+            case .success(let timestamp) where !isCacheValidWhenComparing(timestamp, currentDate()):
+                store.clear()
+                
+            case .success:
+                completion(.success(()))
+            }
+        }
     }
     
     private func cache(username: String, password: String, timestamp: Date, completion: @escaping (SaveResult) -> Void) {
@@ -55,27 +73,6 @@ extension CredentialLoader {
                 completion(.success(()))
                 
             case .success:
-                completion(.success(()))
-            }
-        }
-    }
-}
-
-extension CredentialLoader {
-    typealias ValidationResult = Result<Void, Error>
-    
-    func validateCache(completion: @escaping (ValidationResult) -> Void) {
-        store.load { [weak self] result in
-            guard let self else { return }
-            
-            switch result {
-                case .failure:
-                store.clear()
-                
-                case .success(let timestamp) where !isCacheValidWhenComparing(timestamp, currentDate()):
-                store.clear()
-                
-                case .success:
                 completion(.success(()))
             }
         }
