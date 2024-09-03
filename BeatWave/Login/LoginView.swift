@@ -34,7 +34,23 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                // Add text views here.
+                TextField("Username", text: .constant(""))
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal, 40)
+                
+                SecureField("Password", text: .constant(""))
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal, 40)
+                
+                Spacer().frame(height: 40)
                 
                 Button(action: {
                     // Login Action
