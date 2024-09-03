@@ -10,9 +10,11 @@ import Foundation
 protocol CredentialCache {
     typealias SaveResult = Result<Void, Error>
     typealias ValidationResult = Result<Void, Error>
+    typealias LoadResult = Result<Void, Error>
     
     func save(username: String, password: String, timestamp: Date, completion: @escaping (SaveResult) -> Void)
     func validateCache(completion: @escaping (ValidationResult) -> Void)
+    func load(completion: @escaping (LoadResult) -> Void)
 }
 
 final class CredentialLoader {
@@ -52,16 +54,7 @@ extension CredentialLoader: CredentialCache {
         }
     }
     
-    private func cache(username: String, password: String, timestamp: Date, completion: @escaping (SaveResult) -> Void) {
-        store.clear()
-        store.save(LocalCredential(username, password), timestamp: timestamp, completion: completion)
-    }
-}
-
-extension CredentialLoader {
-    public typealias LoadResult = Swift.Result<Void, Error>
-    
-    public func load(completion: @escaping (LoadResult) -> Void) {
+    func load(completion: @escaping (LoadResult) -> Void) {
         store.load { [weak self] result in
             guard let self else { return }
             
@@ -76,5 +69,10 @@ extension CredentialLoader {
                 completion(.success(()))
             }
         }
+    }
+    
+    private func cache(username: String, password: String, timestamp: Date, completion: @escaping (SaveResult) -> Void) {
+        store.clear()
+        store.save(LocalCredential(username, password), timestamp: timestamp, completion: completion)
     }
 }
