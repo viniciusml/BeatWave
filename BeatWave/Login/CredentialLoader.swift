@@ -17,6 +17,10 @@ final class CredentialLoader {
     private let store: CredentialStore
     private let currentDate: () -> Date
     
+    private var isCacheValidWhenComparing: (Date, Date) -> Bool {
+        CredentialCachePolicy.validate
+    }
+    
     init(store: CredentialStore, currentDate: @escaping () -> Date) {
         self.store = store
         self.currentDate = currentDate
@@ -47,7 +51,7 @@ extension CredentialLoader {
             case .failure(let error):
                 completion(.failure(error))
                 
-            case .success(let timestamp) where CredentialCachePolicy.validate(timestamp, against: currentDate()):
+            case .success(let timestamp) where isCacheValidWhenComparing(timestamp, currentDate()):
                 completion(.success(()))
                 
             case .success:
@@ -68,7 +72,7 @@ extension CredentialLoader {
                 case .failure:
                 store.clear()
                 
-                case .success(let timestamp) where !CredentialCachePolicy.validate(timestamp, against: currentDate()):
+                case .success(let timestamp) where !isCacheValidWhenComparing(timestamp, currentDate()):
                 store.clear()
                 
                 case .success:
