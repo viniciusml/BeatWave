@@ -12,7 +12,9 @@ struct BeatWaveApp: App {
     
     @Environment(\.scenePhase) private var scenePhase
     
-    var compositionRoot = CompositionRoot(credentialLoader: CredentialLoader.init)
+    let credentialLoader = CredentialLoader(
+        store: KeychainCredentialStore(),
+        currentDate: Date.init)
     
     var body: some Scene {
         WindowGroup {
@@ -21,22 +23,10 @@ struct BeatWaveApp: App {
         .onChange(of: scenePhase) { _, newValue in
             switch newValue {
             case .background, .active:
-                compositionRoot.credentialLoader.validateCache { _ in }
+                credentialLoader.validateCache { _ in }
             default:
                 break
             }
         }
-    }
-}
-
-struct CompositionRoot {
-    var credentialLoader: CredentialCache
-    
-    init(
-        credentialStore: CredentialStore = KeychainCredentialStore(),
-        currentDate: @escaping () -> Date =  Date.init,
-        credentialLoader: (CredentialStore, @escaping () -> Date) -> CredentialCache
-    ) {
-        self.credentialLoader = credentialLoader(credentialStore, currentDate)
     }
 }
