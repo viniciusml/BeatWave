@@ -17,6 +17,10 @@
 		EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D2E2C86529C001FB83A /* LoginView.swift */; };
 		EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D312C8652BE001FB83A /* Color+Palette.swift */; };
 		EC731D342C870409001FB83A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D332C870409001FB83A /* LoginViewModel.swift */; };
+		EC731D362C870D5D001FB83A /* CredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D352C870D5D001FB83A /* CredentialStore.swift */; };
+		EC731D382C87AD6A001FB83A /* CredentialCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D372C87AD6A001FB83A /* CredentialCachePolicy.swift */; };
+		EC731D3A2C87B129001FB83A /* CredentialLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D392C87B129001FB83A /* CredentialLoader.swift */; };
+		EC731D3C2C87B3AD001FB83A /* LocalCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D3B2C87B3AD001FB83A /* LocalCredential.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		EC731D2E2C86529C001FB83A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EC731D312C8652BE001FB83A /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
 		EC731D332C870409001FB83A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EC731D352C870D5D001FB83A /* CredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialStore.swift; sourceTree = "<group>"; };
+		EC731D372C87AD6A001FB83A /* CredentialCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialCachePolicy.swift; sourceTree = "<group>"; };
+		EC731D392C87B129001FB83A /* CredentialLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialLoader.swift; sourceTree = "<group>"; };
+		EC731D3B2C87B3AD001FB83A /* LocalCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredential.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,10 @@
 			children = (
 				EC731D2E2C86529C001FB83A /* LoginView.swift */,
 				EC731D332C870409001FB83A /* LoginViewModel.swift */,
+				EC731D352C870D5D001FB83A /* CredentialStore.swift */,
+				EC731D372C87AD6A001FB83A /* CredentialCachePolicy.swift */,
+				EC731D392C87B129001FB83A /* CredentialLoader.swift */,
+				EC731D3B2C87B3AD001FB83A /* LocalCredential.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -283,9 +295,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */,
+				EC731D382C87AD6A001FB83A /* CredentialCachePolicy.swift in Sources */,
 				EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */,
+				EC731D3A2C87B129001FB83A /* CredentialLoader.swift in Sources */,
 				EC731D062C8651DB001FB83A /* ContentView.swift in Sources */,
 				EC731D342C870409001FB83A /* LoginViewModel.swift in Sources */,
+				EC731D362C870D5D001FB83A /* CredentialStore.swift in Sources */,
+				EC731D3C2C87B3AD001FB83A /* LocalCredential.swift in Sources */,
 				EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
