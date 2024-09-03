@@ -5,11 +5,22 @@
 //  Created by Vinicius Leal on 03/09/2024.
 //
 
-import SwiftUI
+import Foundation
 
-final class LoginViewModel: ObservableObject {
+final class LoginViewModel {
     
-    @State var username: String = ""
-    @State var password: String = ""
+    func performAction(_ action: Action) {
+        switch action {
+        case .didPressLogIn:
+            // perform login action
+            break
+        }
+    }
+}
+
+extension LoginViewModel {
     
+    enum Action {
+        case didPressLogIn(username: String, password: String)
+    }
 }

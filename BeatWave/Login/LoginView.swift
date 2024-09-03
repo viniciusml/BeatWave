@@ -9,7 +9,10 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @ObservedObject var viewModel: LoginViewModel
+    private let viewModel: LoginViewModel
+    
+    @State var username: String = ""
+    @State var password: String = ""
     
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -40,7 +43,7 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                TextField("Username", text: $viewModel.username)
+                TextField("Username", text: $username)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
                     .padding(.horizontal)
@@ -49,7 +52,7 @@ struct LoginView: View {
                     .cornerRadius(10)
                     .padding(.horizontal, 40)
                 
-                SecureField("Password", text: $viewModel.password)
+                SecureField("Password", text: $password)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                     .background(Color.white)
@@ -59,7 +62,7 @@ struct LoginView: View {
                 Spacer().frame(height: 40)
                 
                 Button(action: {
-                    // Login Action
+                    viewModel.performAction(.didPressLogIn(username: username, password: password))
                 }) {
                     Text("Log in")
                         .font(.headline)
@@ -69,6 +72,7 @@ struct LoginView: View {
                         .foregroundColor(.black)
                         .cornerRadius(10)
                 }
+                .disabled(isButtonDisabled)
                 .padding(.horizontal, 40)
                 
                 Text("© 2024 BeatWave")
@@ -79,6 +83,10 @@ struct LoginView: View {
                 Spacer().frame(height: 20)
             }
         }
+    }
+    
+    private var isButtonDisabled: Bool {
+        !username.isEmpty && !password.isEmpty
     }
 }
 
