@@ -10,7 +10,7 @@ import SwiftUI
 class ViewRegistry: ObservableObject {
     enum CurrentView {
         case logIn(LoginView)
-        case home(EmptyView)
+        case home(HomeView)
     }
     
     @Published var currentView: CurrentView?

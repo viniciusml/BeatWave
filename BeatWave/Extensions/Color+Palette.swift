@@ -15,6 +15,14 @@ extension Color {
     
     static let bottomBackground = Color(hex: "#263F44") // Dark teal
     
+    static let primaryText = Color(hex: "#FFFFFF") // White
+    
+    static let secondaryText = Color(hex: "#A0A0A0") // Gray
+    
+    static let inactiveIcon = Color(hex: "#FFFFFF") // White
+    
+    static let nowPlayingBarBackground = Color(hex: "#2E3B40") // Soft charcoal
+    
     /// Initialises a `Color` from HEX value.
     ///
     /// Source: https://stackoverflow.com/a/56874327/12854695

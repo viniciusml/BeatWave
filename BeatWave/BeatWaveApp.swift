@@ -34,7 +34,7 @@ struct BeatWaveApp: App {
             switch result {
             case .success:
                 viewRegistry.currentView = .home(
-                    EmptyView()
+                    HomeView()
                 )
             case .failure:
                 viewRegistry.currentView = .logIn(

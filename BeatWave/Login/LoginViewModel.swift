@@ -23,7 +23,7 @@ final class LoginViewModel {
         case let .didPressLogIn(username, password):
             credentialLoader.save(username: username, password: password, timestamp: Date.now) { [weak self] _ in
                 withAnimation {
-                    self?.viewRegistry.currentView = .home(EmptyView())
+                    self?.viewRegistry.currentView = .home(HomeView())
                 }
             }
         }
