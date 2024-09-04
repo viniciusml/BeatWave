@@ -17,14 +17,7 @@ struct BeatWaveApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView(registry: viewRegistry)
-                .onAppear {
-                    viewRegistry.currentView = .logIn(
-                        LoginView(
-                            viewModel: LoginViewModel(
-                                credentialLoader: credentialLoader,
-                                viewRegistry: viewRegistry))
-                    )
-                }
+                .onAppear(perform: setInitialView)
         }
         .onChange(of: scenePhase) { _, newValue in
             switch newValue {
@@ -35,44 +28,22 @@ struct BeatWaveApp: App {
             }
         }
     }
-}
-
-final class Coordinator {
     
-    enum Destination {
-        case login
-        case home
-    }
-    
-    private let registry: ViewRegistry
-    private let credentialLoader: CredentialCache
-    
-    public init(credentialLoader: CredentialCache, registry: ViewRegistry) {
-        self.credentialLoader = credentialLoader
-        self.registry = registry
-        
-        skipLoginIfPossible()
-    }
-    
-    func changeTo(_ destination: Destination) {
-        switch destination {
-        case .login:
-            registry.currentView = .logIn(
-                LoginView(viewModel: LoginViewModel(credentialLoader: credentialLoader, viewRegistry: registry))
-            )
-        case .home:
-            registry.currentView = .home(
-                EmptyView()
-            )
-        }
-    }
-    
-    private func skipLoginIfPossible() {
-        credentialLoader.load { [weak self] result in
-            guard ((try? result.get()) != nil) else {
-                return
+    private func setInitialView() {
+        credentialLoader.load { result in
+            switch result {
+            case .success:
+                viewRegistry.currentView = .home(
+                    EmptyView()
+                )
+            case .failure:
+                viewRegistry.currentView = .logIn(
+                    LoginView(
+                        viewModel: LoginViewModel(
+                            credentialLoader: credentialLoader,
+                            viewRegistry: viewRegistry))
+                )
             }
-            self?.changeTo(.home)
         }
     }
 }
@@ -88,8 +59,8 @@ class ViewRegistry: ObservableObject {
     var view: AnyView {
         switch currentView {
         case let .logIn(view): return AnyView(view)
-        case let .home(view): return AnyView(view.background(Color.yellow))
-        case .none: return AnyView(EmptyView().background(Color.red))
+        case let .home(view): return AnyView(view)
+        case .none: return AnyView(EmptyView())
         }
     }
 }
