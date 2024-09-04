@@ -14,6 +14,7 @@
 		EC4587742C8880A500FA7993 /* SecondaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587732C8880A500FA7993 /* SecondaryText.swift */; };
 		EC4587762C8880C100FA7993 /* MusicRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587752C8880C100FA7993 /* MusicRow.swift */; };
 		EC4587782C889B1A00FA7993 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587772C889B1A00FA7993 /* HomeViewModel.swift */; };
+		EC45877A2C88FBD400FA7993 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587792C88FBD400FA7993 /* AudioPlayer.swift */; };
 		EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D032C8651DB001FB83A /* BeatWaveApp.swift */; };
 		EC731D082C8651DC001FB83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D072C8651DC001FB83A /* Assets.xcassets */; };
 		EC731D0B2C8651DC001FB83A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D0A2C8651DC001FB83A /* Preview Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		EC4587732C8880A500FA7993 /* SecondaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryText.swift; sourceTree = "<group>"; };
 		EC4587752C8880C100FA7993 /* MusicRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRow.swift; sourceTree = "<group>"; };
 		EC4587772C889B1A00FA7993 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EC4587792C88FBD400FA7993 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		EC731D002C8651DB001FB83A /* BeatWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC731D032C8651DB001FB83A /* BeatWaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveApp.swift; sourceTree = "<group>"; };
 		EC731D072C8651DC001FB83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				EC45876E2C88805200FA7993 /* HomeView.swift */,
 				EC4587752C8880C100FA7993 /* MusicRow.swift */,
 				EC4587772C889B1A00FA7993 /* HomeViewModel.swift */,
+				EC4587792C88FBD400FA7993 /* AudioPlayer.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				EC731D342C870409001FB83A /* LoginViewModel.swift in Sources */,
 				EC731D362C870D5D001FB83A /* CredentialStore.swift in Sources */,
 				EC4587762C8880C100FA7993 /* MusicRow.swift in Sources */,
+				EC45877A2C88FBD400FA7993 /* AudioPlayer.swift in Sources */,
 				EC4587692C887BD600FA7993 /* ViewRegistry.swift in Sources */,
 				EC731D3C2C87B3AD001FB83A /* LocalCredential.swift in Sources */,
 				EC4587782C889B1A00FA7993 /* HomeViewModel.swift in Sources */,
