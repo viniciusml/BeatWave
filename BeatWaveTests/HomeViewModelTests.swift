@@ -10,18 +10,35 @@ import XCTest
 
 final class HomeViewModelTests: XCTestCase {
     
-    func test_changeState_fromIdle() {
-        let audioPlayer = AudioPlayerSpy()
-        let sut = HomeViewModel(audioPlayer: audioPlayer)
+    func test_changeState() {
+        let (audioPlayer, sut) = makeSUT()
         XCTAssertEqual(sut.state, .idle)
+        XCTAssertEqual(audioPlayer.logs, [])
         
         sut.performAction(.changeState)
         
         XCTAssertEqual(sut.state, .playing)
+        XCTAssertEqual(audioPlayer.logs, [.play])
+        
+        sut.performAction(.changeState)
+        
+        XCTAssertEqual(sut.state, .paused)
+        XCTAssertEqual(audioPlayer.logs, [.play, .pause])
+        
+        sut.performAction(.changeState)
+        
+        XCTAssertEqual(sut.state, .playing)
+        XCTAssertEqual(audioPlayer.logs, [.play, .pause, .play])
     }
 }
 
 private extension HomeViewModelTests {
+    
+    func makeSUT() -> (audioPlayer: AudioPlayerSpy, sut: HomeViewModel) {
+        let audioPlayer = AudioPlayerSpy()
+        let sut = HomeViewModel(audioPlayer: audioPlayer)
+        return (audioPlayer, sut)
+    }
     
     final class AudioPlayerSpy: AudioPlaying {
         
