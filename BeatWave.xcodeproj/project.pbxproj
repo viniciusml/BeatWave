@@ -15,6 +15,9 @@
 		EC4587762C8880C100FA7993 /* MusicRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587752C8880C100FA7993 /* MusicRow.swift */; };
 		EC4587782C889B1A00FA7993 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587772C889B1A00FA7993 /* HomeViewModel.swift */; };
 		EC45877A2C88FBD400FA7993 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587792C88FBD400FA7993 /* AudioPlayer.swift */; };
+		EC45877C2C890A4300FA7993 /* ResourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45877B2C890A4300FA7993 /* ResourceProvider.swift */; };
+		EC45877E2C890A5B00FA7993 /* AVAudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45877D2C890A5B00FA7993 /* AVAudioPlayerFactory.swift */; };
+		EC4587802C890A6D00FA7993 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45877F2C890A6D00FA7993 /* Song.swift */; };
 		EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D032C8651DB001FB83A /* BeatWaveApp.swift */; };
 		EC731D082C8651DC001FB83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D072C8651DC001FB83A /* Assets.xcassets */; };
 		EC731D0B2C8651DC001FB83A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D0A2C8651DC001FB83A /* Preview Assets.xcassets */; };
@@ -56,6 +59,9 @@
 		EC4587752C8880C100FA7993 /* MusicRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRow.swift; sourceTree = "<group>"; };
 		EC4587772C889B1A00FA7993 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EC4587792C88FBD400FA7993 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		EC45877B2C890A4300FA7993 /* ResourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceProvider.swift; sourceTree = "<group>"; };
+		EC45877D2C890A5B00FA7993 /* AVAudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPlayerFactory.swift; sourceTree = "<group>"; };
+		EC45877F2C890A6D00FA7993 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		EC731D002C8651DB001FB83A /* BeatWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC731D032C8651DB001FB83A /* BeatWaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveApp.swift; sourceTree = "<group>"; };
 		EC731D072C8651DC001FB83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 				EC4587752C8880C100FA7993 /* MusicRow.swift */,
 				EC4587772C889B1A00FA7993 /* HomeViewModel.swift */,
 				EC4587792C88FBD400FA7993 /* AudioPlayer.swift */,
+				EC45877B2C890A4300FA7993 /* ResourceProvider.swift */,
+				EC45877D2C890A5B00FA7993 /* AVAudioPlayerFactory.swift */,
+				EC45877F2C890A6D00FA7993 /* Song.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 				EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */,
 				EC731D382C87AD6A001FB83A /* CredentialCachePolicy.swift in Sources */,
 				EC45876B2C887BEF00FA7993 /* NavigationView.swift in Sources */,
+				EC45877E2C890A5B00FA7993 /* AVAudioPlayerFactory.swift in Sources */,
 				EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */,
 				EC731D3A2C87B129001FB83A /* CredentialLoader.swift in Sources */,
 				EC4587722C88808700FA7993 /* PrimaryText.swift in Sources */,
@@ -351,6 +361,8 @@
 				EC731D362C870D5D001FB83A /* CredentialStore.swift in Sources */,
 				EC4587762C8880C100FA7993 /* MusicRow.swift in Sources */,
 				EC45877A2C88FBD400FA7993 /* AudioPlayer.swift in Sources */,
+				EC45877C2C890A4300FA7993 /* ResourceProvider.swift in Sources */,
+				EC4587802C890A6D00FA7993 /* Song.swift in Sources */,
 				EC4587692C887BD600FA7993 /* ViewRegistry.swift in Sources */,
 				EC731D3C2C87B3AD001FB83A /* LocalCredential.swift in Sources */,
 				EC4587782C889B1A00FA7993 /* HomeViewModel.swift in Sources */,
