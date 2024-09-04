@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocalCredential {
+struct LocalCredential: Equatable {
     let username: String
     let password: String
     

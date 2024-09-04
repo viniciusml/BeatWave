@@ -20,6 +20,7 @@
 		EC4587802C890A6D00FA7993 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45877F2C890A6D00FA7993 /* Song.swift */; };
 		EC4587822C890EAA00FA7993 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587812C890EAA00FA7993 /* HomeViewModelTests.swift */; };
 		EC4587842C8910A900FA7993 /* ResourceProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587832C8910A900FA7993 /* ResourceProviderTests.swift */; };
+		EC4587862C89133600FA7993 /* ValidateCredentialUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587852C89133600FA7993 /* ValidateCredentialUseCaseTests.swift */; };
 		EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D032C8651DB001FB83A /* BeatWaveApp.swift */; };
 		EC731D082C8651DC001FB83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D072C8651DC001FB83A /* Assets.xcassets */; };
 		EC731D0B2C8651DC001FB83A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D0A2C8651DC001FB83A /* Preview Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		EC45877F2C890A6D00FA7993 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		EC4587812C890EAA00FA7993 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		EC4587832C8910A900FA7993 /* ResourceProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceProviderTests.swift; sourceTree = "<group>"; };
+		EC4587852C89133600FA7993 /* ValidateCredentialUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCredentialUseCaseTests.swift; sourceTree = "<group>"; };
 		EC731D002C8651DB001FB83A /* BeatWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC731D032C8651DB001FB83A /* BeatWaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveApp.swift; sourceTree = "<group>"; };
 		EC731D072C8651DC001FB83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				EC4587812C890EAA00FA7993 /* HomeViewModelTests.swift */,
 				EC4587832C8910A900FA7993 /* ResourceProviderTests.swift */,
+				EC4587852C89133600FA7993 /* ValidateCredentialUseCaseTests.swift */,
 			);
 			path = BeatWaveTests;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4587842C8910A900FA7993 /* ResourceProviderTests.swift in Sources */,
+				EC4587862C89133600FA7993 /* ValidateCredentialUseCaseTests.swift in Sources */,
 				EC4587822C890EAA00FA7993 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
