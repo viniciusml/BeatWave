@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 final class LoginViewModel {
     
@@ -22,8 +21,8 @@ final class LoginViewModel {
         switch action {
         case let .didPressLogIn(username, password):
             credentialLoader.save(username: username, password: password, timestamp: Date.now) { [weak self] _ in
-                withAnimation {
-                    self?.viewRegistry.currentView = .home(HomeView())
+                DispatchQueue.main.async {
+                    self?.viewRegistry.setCurrentView(.home(HomeView()))
                 }
             }
         }

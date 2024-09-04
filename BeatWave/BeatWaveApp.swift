@@ -33,16 +33,16 @@ struct BeatWaveApp: App {
         credentialLoader.load { result in
             switch result {
             case .success:
-                viewRegistry.currentView = .home(
+                viewRegistry.setCurrentView(.home(
                     HomeView()
-                )
+                ))
             case .failure:
-                viewRegistry.currentView = .logIn(
+                viewRegistry.setCurrentView(.logIn(
                     LoginView(
                         viewModel: LoginViewModel(
                             credentialLoader: credentialLoader,
                             viewRegistry: viewRegistry))
-                )
+                ))
             }
         }
     }

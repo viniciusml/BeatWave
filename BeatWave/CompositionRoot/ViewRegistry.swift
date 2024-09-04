@@ -13,7 +13,13 @@ class ViewRegistry: ObservableObject {
         case home(HomeView)
     }
     
-    @Published var currentView: CurrentView?
+    @Published private var currentView: CurrentView?
+    
+    func setCurrentView(_ view: CurrentView) {
+        withAnimation {
+            currentView = view
+        }
+    }
     
     var view: AnyView {
         switch currentView {
