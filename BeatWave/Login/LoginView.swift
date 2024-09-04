@@ -106,5 +106,8 @@ struct LoginView: View {
         }
     }
     
-    return LoginView(viewModel: LoginViewModel(credentialLoader: FakeCredentialLoader()))
+    return LoginView(
+        viewModel: LoginViewModel(
+            credentialLoader: FakeCredentialLoader(),
+            viewRegistry: ViewRegistry()))
 }

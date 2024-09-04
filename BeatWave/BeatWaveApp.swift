@@ -10,18 +10,26 @@ import SwiftUI
 @main
 struct BeatWaveApp: App {
     
-    var diContainer = DependencyContainer()
-    
+    let credentialLoader = CredentialLoader(store: KeychainCredentialStore(), currentDate: Date.init)
+    @StateObject var viewRegistry = ViewRegistry()
     @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {
         WindowGroup {
-            diContainer.signInStrategy.makeInitialView()
+            NavigationView(registry: viewRegistry)
+                .onAppear {
+                    viewRegistry.currentView = .logIn(
+                        LoginView(
+                            viewModel: LoginViewModel(
+                                credentialLoader: credentialLoader,
+                                viewRegistry: viewRegistry))
+                    )
+                }
         }
         .onChange(of: scenePhase) { _, newValue in
             switch newValue {
             case .background, .active:
-                diContainer.credentialLoader.validateCache { _ in }
+                credentialLoader.validateCache { _ in }
             default:
                 break
             }
@@ -29,45 +37,73 @@ struct BeatWaveApp: App {
     }
 }
 
-struct DependencyContainer {
-    var credentialLoader: CredentialCache
-    @ObservedObject var signInStrategy: SignInStrategy
+final class Coordinator {
     
-    init(
-        credentialStore: CredentialStore = KeychainCredentialStore(),
-        currentDate: @escaping () -> Date = Date.init
-    ) {
-        self.credentialLoader = CredentialLoader(store: credentialStore, currentDate: currentDate)
-        self.signInStrategy = SignInStrategy(credentialLoader: credentialLoader)
+    enum Destination {
+        case login
+        case home
     }
-}
-
-final class SignInStrategy: ObservableObject {
     
-    @Published private var isLoggedIn: Bool = false
-    
+    private let registry: ViewRegistry
     private let credentialLoader: CredentialCache
     
-    public init(credentialLoader: CredentialCache) {
+    public init(credentialLoader: CredentialCache, registry: ViewRegistry) {
         self.credentialLoader = credentialLoader
+        self.registry = registry
         
-        credentialLoader.load { result in
+        skipLoginIfPossible()
+    }
+    
+    func changeTo(_ destination: Destination) {
+        switch destination {
+        case .login:
+            registry.currentView = .logIn(
+                LoginView(viewModel: LoginViewModel(credentialLoader: credentialLoader, viewRegistry: registry))
+            )
+        case .home:
+            registry.currentView = .home(
+                EmptyView()
+            )
+        }
+    }
+    
+    private func skipLoginIfPossible() {
+        credentialLoader.load { [weak self] result in
             guard ((try? result.get()) != nil) else {
                 return
             }
-            self.isLoggedIn = true
+            self?.changeTo(.home)
         }
     }
+}
+
+class ViewRegistry: ObservableObject {
+    enum CurrentView {
+        case logIn(LoginView)
+        case home(EmptyView)
+    }
     
-    @ViewBuilder
-    func makeInitialView() -> some View {
-        switch isLoggedIn {
-        case true:
-            
-            EmptyView() //music view, login is valid
-        case false:
-            
-            LoginView(viewModel: LoginViewModel(credentialLoader: credentialLoader))
+    @Published var currentView: CurrentView?
+    
+    var view: AnyView {
+        switch currentView {
+        case let .logIn(view): return AnyView(view)
+        case let .home(view): return AnyView(view.background(Color.yellow))
+        case .none: return AnyView(EmptyView().background(Color.red))
         }
+    }
+}
+
+struct NavigationView: View {
+    @ObservedObject var registry: ViewRegistry
+    
+    var body: some View {
+        registry.view
+            .transition(
+                AnyTransition
+                    .opacity
+                    .combined(with: .move(edge: .trailing))
+            )
+            .id(UUID())
     }
 }
