@@ -19,10 +19,10 @@
 		EC45877E2C890A5B00FA7993 /* AVAudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45877D2C890A5B00FA7993 /* AVAudioPlayerFactory.swift */; };
 		EC4587802C890A6D00FA7993 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45877F2C890A6D00FA7993 /* Song.swift */; };
 		EC4587822C890EAA00FA7993 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587812C890EAA00FA7993 /* HomeViewModelTests.swift */; };
+		EC4587842C8910A900FA7993 /* ResourceProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587832C8910A900FA7993 /* ResourceProviderTests.swift */; };
 		EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D032C8651DB001FB83A /* BeatWaveApp.swift */; };
 		EC731D082C8651DC001FB83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D072C8651DC001FB83A /* Assets.xcassets */; };
 		EC731D0B2C8651DC001FB83A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D0A2C8651DC001FB83A /* Preview Assets.xcassets */; };
-		EC731D152C8651DC001FB83A /* BeatWaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D142C8651DC001FB83A /* BeatWaveTests.swift */; };
 		EC731D1F2C8651DC001FB83A /* BeatWaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D1E2C8651DC001FB83A /* BeatWaveUITests.swift */; };
 		EC731D212C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D202C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift */; };
 		EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D2E2C86529C001FB83A /* LoginView.swift */; };
@@ -64,12 +64,12 @@
 		EC45877D2C890A5B00FA7993 /* AVAudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPlayerFactory.swift; sourceTree = "<group>"; };
 		EC45877F2C890A6D00FA7993 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		EC4587812C890EAA00FA7993 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		EC4587832C8910A900FA7993 /* ResourceProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceProviderTests.swift; sourceTree = "<group>"; };
 		EC731D002C8651DB001FB83A /* BeatWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC731D032C8651DB001FB83A /* BeatWaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveApp.swift; sourceTree = "<group>"; };
 		EC731D072C8651DC001FB83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC731D0A2C8651DC001FB83A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC731D102C8651DC001FB83A /* BeatWaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeatWaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC731D142C8651DC001FB83A /* BeatWaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveTests.swift; sourceTree = "<group>"; };
 		EC731D1A2C8651DC001FB83A /* BeatWaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeatWaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC731D1E2C8651DC001FB83A /* BeatWaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveUITests.swift; sourceTree = "<group>"; };
 		EC731D202C8651DC001FB83A /* BeatWaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 		EC731D132C8651DC001FB83A /* BeatWaveTests */ = {
 			isa = PBXGroup;
 			children = (
-				EC731D142C8651DC001FB83A /* BeatWaveTests.swift */,
 				EC4587812C890EAA00FA7993 /* HomeViewModelTests.swift */,
+				EC4587832C8910A900FA7993 /* ResourceProviderTests.swift */,
 			);
 			path = BeatWaveTests;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC731D152C8651DC001FB83A /* BeatWaveTests.swift in Sources */,
+				EC4587842C8910A900FA7993 /* ResourceProviderTests.swift in Sources */,
 				EC4587822C890EAA00FA7993 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

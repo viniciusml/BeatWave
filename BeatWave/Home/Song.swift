@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Song {
+struct Song: Equatable {
     let url: URL
 }
