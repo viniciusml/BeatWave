@@ -15,7 +15,7 @@ On app start, a login screen is presented, showing a two text fields, one for us
 </div>
 
 ### AC 2
-Upon enterind the login (no validation for now) the app navigates to a home screen with the songs displayed.
+Upon entering the login (no validation for now) the app navigates to a home screen with the songs displayed.
 <div>
 <img src="screenshots/home.png" width=300 />
 </div>
