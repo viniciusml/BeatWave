@@ -7,19 +7,33 @@
 
 import Foundation
 
-final class HomeViewModel {
+final class HomeViewModel: ObservableObject {
     
-    init() {
+    private let audioPlayer: AudioPlaying
+    @Published var state: PlayerState = .idle
+    
+    init(audioPlayer: AudioPlaying) {
+        self.audioPlayer = audioPlayer
     }
     
     func performAction(_ action: Action) {
         switch action {
         case .changeState:
-            ()
-        case .next:
-            ()
-        case .previous:
-            ()
+            switchPlayerState()
+        }
+    }
+    
+    private func switchPlayerState() {
+        switch state {
+        case .idle:
+            audioPlayer.play()
+            state = .playing
+        case .playing:
+            audioPlayer.pause()
+            state = .paused
+        case .paused:
+            audioPlayer.play()
+            state = .paused
         }
     }
 }
@@ -28,18 +42,11 @@ extension HomeViewModel {
     
     enum Action {
         case changeState
-        case next
-        case previous
     }
     
-    enum Update {
-        
-        enum InitiatedState {
-            case playing
-            case paused
-        }
-        
+    enum PlayerState {
         case idle
-        case initiated(InitiatedState)
+        case playing
+        case paused
     }
 }
