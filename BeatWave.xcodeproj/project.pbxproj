@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC4587692C887BD600FA7993 /* ViewRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4587682C887BD600FA7993 /* ViewRegistry.swift */; };
+		EC45876B2C887BEF00FA7993 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45876A2C887BEF00FA7993 /* NavigationView.swift */; };
 		EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D032C8651DB001FB83A /* BeatWaveApp.swift */; };
 		EC731D062C8651DB001FB83A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC731D052C8651DB001FB83A /* ContentView.swift */; };
 		EC731D082C8651DC001FB83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC731D072C8651DC001FB83A /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC4587682C887BD600FA7993 /* ViewRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRegistry.swift; sourceTree = "<group>"; };
+		EC45876A2C887BEF00FA7993 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		EC731D002C8651DB001FB83A /* BeatWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC731D032C8651DB001FB83A /* BeatWaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatWaveApp.swift; sourceTree = "<group>"; };
 		EC731D052C8651DB001FB83A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				EC731D052C8651DB001FB83A /* ContentView.swift */,
 				EC731D072C8651DC001FB83A /* Assets.xcassets */,
 				EC731D092C8651DC001FB83A /* Preview Content */,
+				EC4587682C887BD600FA7993 /* ViewRegistry.swift */,
+				EC45876A2C887BEF00FA7993 /* NavigationView.swift */,
 			);
 			path = BeatWave;
 			sourceTree = "<group>";
@@ -296,11 +302,13 @@
 			files = (
 				EC731D2F2C86529C001FB83A /* LoginView.swift in Sources */,
 				EC731D382C87AD6A001FB83A /* CredentialCachePolicy.swift in Sources */,
+				EC45876B2C887BEF00FA7993 /* NavigationView.swift in Sources */,
 				EC731D322C8652BE001FB83A /* Color+Palette.swift in Sources */,
 				EC731D3A2C87B129001FB83A /* CredentialLoader.swift in Sources */,
 				EC731D062C8651DB001FB83A /* ContentView.swift in Sources */,
 				EC731D342C870409001FB83A /* LoginViewModel.swift in Sources */,
 				EC731D362C870D5D001FB83A /* CredentialStore.swift in Sources */,
+				EC4587692C887BD600FA7993 /* ViewRegistry.swift in Sources */,
 				EC731D3C2C87B3AD001FB83A /* LocalCredential.swift in Sources */,
 				EC731D042C8651DB001FB83A /* BeatWaveApp.swift in Sources */,
 			);

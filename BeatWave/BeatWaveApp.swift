@@ -47,34 +47,3 @@ struct BeatWaveApp: App {
         }
     }
 }
-
-class ViewRegistry: ObservableObject {
-    enum CurrentView {
-        case logIn(LoginView)
-        case home(EmptyView)
-    }
-    
-    @Published var currentView: CurrentView?
-    
-    var view: AnyView {
-        switch currentView {
-        case let .logIn(view): return AnyView(view)
-        case let .home(view): return AnyView(view)
-        case .none: return AnyView(EmptyView())
-        }
-    }
-}
-
-struct NavigationView: View {
-    @ObservedObject var registry: ViewRegistry
-    
-    var body: some View {
-        registry.view
-            .transition(
-                AnyTransition
-                    .opacity
-                    .combined(with: .move(edge: .trailing))
-            )
-            .id(UUID())
-    }
-}
